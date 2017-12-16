@@ -40,6 +40,8 @@ public class Waits {
 		driver.findElement(By.id("id_gender1")).click();
 		
 		System.out.println("RadioButton is clicked");
+
+		System.out.println("Hiting the URL")// Chenge made by person 2;
 		
 		
 	}
