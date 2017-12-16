@@ -22,7 +22,7 @@ public class Waits {
 		
 		driver.get("http://automationpractice.com/index.php");
 		
-		System.out.println("Hiting the URL");		
+		System.out.println("Hiting the URL correctly");		
 		
 		driver.findElement(By.className("login")).click();
 		
