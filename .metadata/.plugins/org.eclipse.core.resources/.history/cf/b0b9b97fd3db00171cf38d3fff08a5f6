@@ -1,0 +1,38 @@
+package com.tutorial.selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Poc {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+
+		System.setProperty("webdriver.chrome.driver","G:\\SeleniumSoftware\\chromedriver.exe");		
+		System.out.println("Opening the browser");    
+			
+		//for (int i=0;i<20;i++) {
+			WebDriver driver = new ChromeDriver();	
+			driver.get("https://www.youtube.com/watch?v=X5kVCgEowpU");
+			WebElement elementnowtime = driver.findElement(By.xpath(".//*[@class='ytp-time-display notranslate']//span[@class='ytp-time-current']"));
+			WebElement elementtotaltime =driver.findElement(By.xpath(".//*[@class='ytp-time-display notranslate']//span[@class='ytp-time-duration']"));
+			String timenow = elementnowtime.getText();
+			System.out.println(timenow);			
+			String totaltime =elementtotaltime.getText();
+			System.out.println(totaltime);			
+			//Actions action = new Actions(driver);
+			//action.moveToElement(elementnowtime).doubleClick().build().perform();			
+			//elementnowtime.sendKeys("8");
+			driver.findElement(By.xpath(".//*[@class='ytp-progress-bar-padding']")).click();
+			Thread.sleep(20000);			
+			System.out.println(driver.findElement(By.xpath(".//*[@id='count']")).getText());			
+			driver.close();
+			//}
+
+		}
+	
+	}
